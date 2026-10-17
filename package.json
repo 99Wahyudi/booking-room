@@ -1,0 +1,17 @@
+{
+  "name": "booking-room",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Monorepo for booking-room (frontend + backend)",
+  "scripts": {
+    "dev": "concurrently -n FE,BE -c blue,green \"npm --prefix frontend run dev\" \"cd backend && go run main.go\"",
+    "dev:fe": "npm --prefix frontend run dev",
+    "dev:be": "cd backend && go run main.go",
+    "dev:be:air": "cd backend && air",
+    "build": "npm run build:fe",
+    "build:fe": "npm --prefix frontend run build"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
