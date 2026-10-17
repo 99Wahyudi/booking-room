@@ -1,0 +1,14 @@
+CREATE TABLE facilities (
+  id BIGINT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  icon VARCHAR(100),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB;
+
+CREATE TABLE room_facilities (
+  room_id BIGINT NOT NULL,
+  facility_id BIGINT NOT NULL,
+  PRIMARY KEY (room_id, facility_id),
+  FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE,
+  FOREIGN KEY (facility_id) REFERENCES facilities(id) ON DELETE CASCADE
+) ENGINE=InnoDB;

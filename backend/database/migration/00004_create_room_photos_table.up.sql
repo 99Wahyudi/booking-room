@@ -1,0 +1,10 @@
+CREATE TABLE room_photos (
+  id BIGINT AUTO_INCREMENT PRIMARY KEY,
+  room_id BIGINT NOT NULL,
+  url VARCHAR(500) NOT NULL,
+  is_primary BOOLEAN NOT NULL DEFAULT FALSE,
+  sort_order INT NOT NULL DEFAULT 0,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE,
+  INDEX idx_room_photos_room_id (room_id)
+) ENGINE=InnoDB;

@@ -1,0 +1,39 @@
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+vendor/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
+
+# Uploaded files
+storage/uploads/
+
+# Windows reserved device name
+nul
